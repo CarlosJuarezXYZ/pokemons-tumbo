@@ -5,13 +5,14 @@ export interface CardsProps {
   src: string;
   title: string;
   number: number;
+  onClick?:()=>void
 }
 
 const {TextCard,TitleCard,CardContent} = CardStyled;
 
-const Card: FC<CardsProps> = ({ number,src, title }): ReactElement => {
+const Card: FC<CardsProps> = ({ number,src, title,onClick }): ReactElement => {
   return (
-      <CardContent>
+      <CardContent onClick={onClick} >
         <img src={src} alt='image'/>
         <TitleCard>{title}</TitleCard>
       <TextCard>00{number}</TextCard>

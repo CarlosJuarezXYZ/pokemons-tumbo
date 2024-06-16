@@ -11,16 +11,16 @@ export const getPokemonsMapper = (
     imageUrl: pokemon.sprites.front_default,
     height: pokemon.height,
     weight: pokemon.weight,
-    type: pokemon.types.map(({ name, url }: PokemonResponse) => {
+    type: pokemon?.types.map(({ type }: any) => {
       return {
-        name,
-        url,
+        name: type.name,
+        url: type.url,
       };
     }),
-    abilities: pokemon.abilities.map(({ name, url }: PokemonResponse) => {
+    abilities: pokemon?.abilities.map(({ ability }: any) => {
       return {
-        name,
-        url,
+        name: ability.name,
+        url: ability.url,
       };
     }),
   };
