@@ -5,6 +5,7 @@ import { PokemonDetails } from "../../domain/pokemon";
 import { Flex, Modal } from "antd";
 import { HomeStyled } from "./Home.styled";
 import { CardStyled } from "../../components/card/Card.styled";
+import {  useNavigate } from "react-router-dom";
 
 const { ContentHome } = HomeStyled;
 const { TitleCard,TextCard } = CardStyled;
@@ -13,6 +14,7 @@ const Home: FC = () => {
   const [pokemons, setPokemons] = useState<PokemonDetails[]>();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [detailPokemon, setDetailPokeom] = useState<any>();
+  const navigate = useNavigate();
 
   const showModal = (pokemon: PokemonDetails) => {
     setDetailPokeom(pokemon);
